@@ -5,303 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bakersfield Insurance Group | Est. 2009</title>
     <style>
-        /* --- CSS VARIABLES (COLOR SCHEME) --- */
         :root {
-            --primary-blue: #002B5C;  /* Deep Navy */
-            --primary-gold: #C5A059;  /* Muted Gold */
-            --light-gold: #E6C885;    /* Highlight Gold */
-            --dark-blue: #001A38;     /* Footer Blue */
+            --primary-blue: #002B5C;  
+            --primary-gold: #C5A059;  
+            --light-gold: #E6C885;    
+            --dark-blue: #001A38;     
             --white: #ffffff;
             --gray-light: #f4f4f4;
             --text-dark: #333333;
         }
 
-        /* --- GLOBAL RESET --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--white);
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        body { line-height: 1.6; color: var(--text-dark); background-color: var(--white); }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         ul { list-style: none; }
 
-        /* --- BUTTON STYLES --- */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 4px;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            cursor: pointer;
-            border: none;
-        }
+        .btn { display: inline-block; padding: 12px 30px; border-radius: 4px; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; cursor: pointer; border: none; }
+        .btn-gold { background-color: var(--primary-gold); color: var(--primary-blue); }
+        .btn-gold:hover { background-color: var(--light-gold); transform: translateY(-2px); }
+        .btn-outline { border: 2px solid var(--white); color: var(--white); }
+        .btn-outline:hover { background-color: var(--white); color: var(--primary-blue); }
 
-        .btn-gold {
-            background-color: var(--primary-gold);
-            color: var(--primary-blue);
-        }
-
-        .btn-gold:hover {
-            background-color: var(--light-gold);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--white);
-            color: var(--white);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--white);
-            color: var(--primary-blue);
-        }
-
-        /* --- HEADER --- */
-        header {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--primary-gold);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-blue);
-            font-weight: 900;
-            font-size: 1.2rem;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 2rem;
-        }
-
+        header { background-color: var(--primary-blue); color: var(--white); padding: 1rem 5%; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); display: flex; justify-content: space-between; align-items: center; }
+        
+        /* Updated Logo Class for Image */
+        .logo img { height: 60px; /* Adjust this number to make your logo bigger or smaller */ }
+        
+        nav ul { display: flex; gap: 2rem; align-items: center; }
         nav a:hover { color: var(--primary-gold); }
 
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 85vh;
-            background: linear-gradient(rgba(0, 43, 92, 0.85), rgba(0, 43, 92, 0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-            margin-top: 60px;
-        }
+        .hero { height: 85vh; background: linear-gradient(rgba(0, 43, 92, 0.85), rgba(0, 43, 92, 0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); margin-top: 60px; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero-content p { font-size: 1.25rem; margin-bottom: 2rem; color: var(--light-gold); }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
+        .services { padding: 5rem 10%; background-color: var(--gray-light); text-align: center; }
+        .section-title { margin-bottom: 3rem; color: var(--primary-blue); font-size: 2.5rem; }
+        .section-subtitle { display: block; color: var(--primary-gold); font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 2px; text-transform: uppercase; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .service-card { background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-bottom: 5px solid var(--primary-gold); transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-10px); }
+        .icon { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 1rem; }
 
-        .hero-content p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            color: var(--light-gold);
-        }
+        footer { background-color: var(--dark-blue); color: #aaa; padding: 3rem 10%; font-size: 0.9rem; }
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+        .footer-column h3 { color: var(--white); margin-bottom: 1rem; }
+        .copyright { text-align: center; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
 
-        /* --- SERVICES SECTION --- */
-        .services {
-            padding: 5rem 10%;
-            background-color: var(--gray-light);
-            text-align: center;
-        }
-
-        .section-title {
-            margin-bottom: 3rem;
-            color: var(--primary-blue);
-            font-size: 2.5rem;
-        }
-
-        .section-subtitle {
-            display: block;
-            color: var(--primary-gold);
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-bottom: 5px solid var(--primary-gold);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .icon {
-            font-size: 2.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-        }
-
-        /* --- ABOUT SECTION --- */
-        .about {
-            padding: 5rem 10%;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 4rem;
-        }
-
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 15px 15px 0px var(--primary-gold);
-        }
-
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .about-text h2 {
-            color: var(--primary-blue);
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .badge {
-            background-color: var(--primary-blue);
-            color: var(--primary-gold);
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-
-        /* --- CONTACT/CTA --- */
-        .cta {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 4rem 10%;
-            text-align: center;
-        }
-
-        .form-container {
-            max-width: 600px;
-            margin: 2rem auto 0;
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 8px;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: var(--dark-blue);
-            color: #aaa;
-            padding: 3rem 10%;
-            font-size: 0.9rem;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .footer-column h3 {
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-
-        .copyright {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* MOBILE RESPONSIVE */
-        @media (max-width: 768px) {
-            nav { display: none; } /* Hidden on mobile for simplicity */
-            .hero-content h1 { font-size: 2.2rem; }
-            .about { flex-direction: column; }
-        }
+        @media (max-width: 768px) { nav { display: none; } .hero-content h1 { font-size: 2.2rem; } }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo">
-            <div class="logo-icon">B</div>
-            <div>
-                BAKERSFIELD<br>
-                <span style="font-size: 0.8rem; color: var(--primary-gold); letter-spacing: 1px;">INSURANCE GROUP</span>
-            </div>
+            <a href="index.html">
+                <img src="logo.png" alt="Bakersfield Insurance Group Logo">
+            </a>
         </div>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact" class="btn btn-gold" style="padding: 8px 20px;">Get a Quote</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="auto.html">Auto</a></li>
+                <li><a href="home-insurance.html">Home Insurance</a></li>
+                <li><a href="business.html">Business</a></li>
+                <li><a href="#contact" class="btn btn-gold" style="padding: 8px 20px; color: var(--primary-blue);">Get a Quote</a></li>
             </ul>
         </nav>
     </header>
@@ -313,7 +80,6 @@
             <p>Comprehensive coverage for Auto, Home, and Business.</p>
             <br>
             <a href="#contact" class="btn btn-gold">Request a Free Quote</a>
-            <a href="#services" class="btn btn-outline" style="margin-left: 10px;">Our Services</a>
         </div>
     </section>
 
@@ -326,58 +92,23 @@
                 <div class="icon">🚗</div>
                 <h3>Auto Insurance</h3>
                 <p>Stay protected on the road with liability, collision, and comprehensive coverage tailored to your driving needs.</p>
+                <br>
+                <a href="auto.html" style="color: var(--primary-gold); font-weight: bold;">Learn More &rarr;</a>
             </div>
             <div class="service-card">
                 <div class="icon">🏠</div>
                 <h3>Home Insurance</h3>
                 <p>Protect your biggest investment. Our homeowner's policies cover theft, fire, and natural disasters.</p>
+                <br>
+                <a href="home-insurance.html" style="color: var(--primary-gold); font-weight: bold;">Learn More &rarr;</a>
             </div>
             <div class="service-card">
                 <div class="icon">🏢</div>
                 <h3>Business Insurance</h3>
                 <p>From General Liability to Workers' Comp, we help Bakersfield businesses thrive without fear of risk.</p>
+                <br>
+                <a href="business.html" style="color: var(--primary-gold); font-weight: bold;">Learn More &rarr;</a>
             </div>
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="Office building">
-        </div>
-        <div class="about-text">
-            <span class="badge">ESTABLISHED 2009</span>
-            <h2>Local. Trusted. Experienced.</h2>
-            <p>For over 15 years, Bakersfield Insurance Group has been dedicated to providing personalized insurance solutions to our community. We believe insurance isn't just about policies—it's about people.</p>
-            <br>
-            <p>Our team of licensed agents works with top-rated carriers to find you the best rates without sacrificing coverage. Whether you are buying your first home or starting a business, we are here to guide you.</p>
-            <br>
-            <a href="#contact" style="color: var(--primary-blue); font-weight: bold; border-bottom: 2px solid var(--primary-gold);">Meet Our Team &rarr;</a>
-        </div>
-    </section>
-
-    <section class="cta" id="contact">
-        <h2>Get Your Quote Today</h2>
-        <p>Fill out the form below and an agent will contact you within 24 hours.</p>
-        
-        <div class="form-container">
-            <form>
-                <div class="form-group">
-                    <input type="text" placeholder="Full Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Email Address" required>
-                </div>
-                <div class="form-group">
-                    <select style="width: 100%; padding: 12px; border-radius: 4px; border:none;">
-                        <option>What type of insurance do you need?</option>
-                        <option>Auto</option>
-                        <option>Home</option>
-                        <option>Business</option>
-                        <option>Life</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-gold" style="width: 100%; border: none;">Submit Request</button>
-            </form>
         </div>
     </section>
 
@@ -386,26 +117,14 @@
             <div class="footer-column">
                 <h3>Bakersfield Insurance Group</h3>
                 <p>123 Truxtun Avenue<br>Bakersfield, CA 93301</p>
-                <br>
-                <p><strong>Phone:</strong> (661) 555-0199</p>
-                <p><strong>Email:</strong> info@bakersfieldins.group</p>
             </div>
             <div class="footer-column">
-                <h3>Office Hours</h3>
-                <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
-                <p>Sat: 10:00 AM - 2:00 PM</p>
-                <p>Sun: Closed</p>
-            </div>
-            <div class="footer-column">
-                <h3>Navigation</h3>
-                <p><a href="#home">Home</a></p>
-                <p><a href="#services">Services</a></p>
-                <p><a href="#about">About Us</a></p>
+                <h3>Contact</h3>
+                <p>(661) 555-0199</p>
+                <p>info@bakersfieldins.group</p>
             </div>
         </div>
-        <div class="copyright">
-            &copy; 2026 Bakersfield Insurance Group | Est. 2009 | All Rights Reserved.
-        </div>
+        <div class="copyright">&copy; 2026 Bakersfield Insurance Group | Est. 2009</div>
     </footer>
 
 </body>
